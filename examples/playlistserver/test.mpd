@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MPD xmlns="urn:mpeg:dash:schema:mpd:2011" profiles="urn:mpeg:dash:profile:isoff-on-demand:2011" type="static" mediaPresentationDuration="PT90S" minBufferTime="PT1.97S">
+  <Period>
+    <AdaptationSet mimeType="video/mp4" startWithSAP="1" scanType="progressive" segmentAlignment="true">
+      <Representation bandwidth="3731000" codecs="avc1.4d401e" frameRate="30000/1001" height="1280" id="3000k/video-1" width="1920">
+        <BaseURL>3000k/output-video-1.mp4</BaseURL>
+        <SegmentBase indexRange="700-752">
+          <Initialization range="0-675"></Initialization>
+        </SegmentBase>
+      </Representation>
+    </AdaptationSet>
+  </Period>
+</MPD>
+
