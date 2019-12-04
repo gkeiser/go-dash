@@ -25,8 +25,8 @@ func liveNew() {
 	const audioBandwidth = 100 * 1000
 
 	audioAS, _ := m.AddNewAdaptationSetAudio(mpd.DASH_MIME_TYPE_AUDIO_MP4, true, 1, "en")
-	_, _ = audioAS.SetNewSegmentTemplate(duration, "$RepresentationID$/audio_init1.m4s", "$RepresentationID$/audio$Number$.m4s", 1, timescale)
-	_, _ = audioAS.AddNewRepresentationAudio(4800, audioBandwidth, "mp4a.40.2", "audio")
+	_, _ = audioAS.SetNewSegmentTemplate(96000, "$RepresentationID$/audio_init1.m4s", "$RepresentationID$/audio$Number$.m4a", 1, 48000)
+	_, _ = audioAS.AddNewRepresentationAudio(48000, audioBandwidth, "mp4a.40.2", "audio")
 	// _, _ = videoAS.AddNewRepresentationAudio(48000, , "3000k", "30000/1001", 1920, 1280)
 
 	schemeIDURI := "urn:mpeg:dash:utc:http-iso:2014"
