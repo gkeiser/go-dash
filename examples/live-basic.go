@@ -21,13 +21,13 @@ func liveNew() {
 	videoAS, _ := m.AddNewAdaptationSetVideo(mpd.DASH_MIME_TYPE_VIDEO_MP4, "progressive", true, 1)
 	_, _ = videoAS.SetNewSegmentTemplate(duration, "$RepresentationID$/video_init1.m4s", "$RepresentationID$/video$Number$.m4s", 1, timescale)
 	_, _ = videoAS.AddNewRepresentationVideo(3569000, "avc1.4d401f", "3000k", "30000/1001", 1920, 1280)
-	// _, _ = videoAS.AddNewRepresentationVideo(1911775, "avc1.4d401f", "1000", "30000/1001", 1024, 576)
-	// _, _ = videoAS.AddNewRepresentationVideo(2295158, "avc1.4d401f", "1200", "30000/1001", 1024, 576)
-	// _, _ = videoAS.AddNewRepresentationVideo(2780732, "avc1.4d401f", "1500", "30000/1001", 1280, 720)
 
-	// subtitleAS, _ := m.AddNewAdaptationSetSubtitle(mpd.DASH_MIME_TYPE_SUBTITLE_VTT, "en")
-	// subtitleRep, _ := subtitleAS.AddNewRepresentationSubtitle(256, "subtitle_en")
-	// _ = subtitleRep.SetNewBaseURL("http://example.com/content/sintel/subtitles/subtitles_en.vtt")
+	const audioBandwidth = 100 * 1000
+
+	audioAS, _ := m.AddNewAdaptationSetAudio(mpd.DASH_MIME_TYPE_AUDIO_MP4, true, 1, "en")
+	_, _ = audioAS.SetNewSegmentTemplate(duration, "$RepresentationID$/audio_init1.m4s", "$RepresentationID$/audio$Number$.m4s", 1, timescale)
+	_, _ = audioAS.AddNewRepresentationAudio(4800, audioBandwidth, "mp4a.40.2", "audio")
+	// _, _ = videoAS.AddNewRepresentationAudio(48000, , "3000k", "30000/1001", 1920, 1280)
 
 	schemeIDURI := "urn:mpeg:dash:utc:http-iso:2014"
 	//or, write out current server time?

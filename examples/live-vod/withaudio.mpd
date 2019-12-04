@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MPD xmlns="urn:mpeg:dash:schema:mpd:2011" profiles="urn:mpeg:dash:profile:isoff-live:2011" type="static" mediaPresentationDuration="PT0M12S" minBufferTime="PT1.97S">
+  <Period>
+    <AdaptationSet mimeType="video/mp4" startWithSAP="1" scanType="progressive" segmentAlignment="true">
+      <SegmentTemplate duration="180000" initialization="$RepresentationID$/video_init1.m4s" media="$RepresentationID$/video$Number$.m4s" startNumber="1" timescale="90000"></SegmentTemplate>
+      <Representation bandwidth="3569000" codecs="avc1.4d401f" frameRate="30000/1001" height="1280" id="3000k" width="1920"></Representation>
+    </AdaptationSet>
+    <AdaptationSet mimeType="audio/mp4" startWithSAP="1" segmentAlignment="true" lang="en">
+      <SegmentTemplate duration="180000" initialization="$RepresentationID$/audio_init1.m4s" media="$RepresentationID$/audio$Number$.m4s" startNumber="1" timescale="90000"></SegmentTemplate>
+      <Representation audioSamplingRate="4800" bandwidth="100000" codecs="mp4a.40.2" id="audio"></Representation>
+    </AdaptationSet>
+  </Period>
+  <UTCTiming schemeIDURI="urn:mpeg:dash:utc:http-iso:2014" value="https://time.akamai.com/?iso"></UTCTiming>
+</MPD>
+
