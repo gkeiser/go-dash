@@ -1,0 +1,17 @@
+<html>
+<script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
+<style>
+    video {
+        width: 640px;
+        height: 360px;
+    }
+</style>
+
+<body>
+    <!--You need to execute `go run examples/live-vod/fileserver.go` to server the mpd and this page-->
+    <div>
+        <video data-dashjs-player autoplay src="http://localhost:8000/withaudio.mpd" controls></video>
+    </div>
+</body>
+
+</html>
